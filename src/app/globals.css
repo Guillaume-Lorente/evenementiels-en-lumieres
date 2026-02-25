@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand */
+  --primary: #1a4d2e; /* Titres, logo */
+  --secondary: #4f7942; /* Sous-titres */
+  --accent: #8fbc8f; /* Hover, liens */
+
+  /* Highlights */
+  --highlight: #d4af37; /* CTA, highlights */
+
+  /* Surfaces */
+  --background: #f5f5dc; /* Backgrounds clairs */
+  --surface: #ffffff; /* Cartes, blocs */
+
+  /* Neutrals */
+  --foreground: #2d3436; /* Texte corps */
+  --border: #dfe6e9; /* Bordures/séparateurs */
+}
+
+/* Base */
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* ========================= */
+/*  Utility classes (design tokens) */
+/* ========================= */
+
+/* Text colors */
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-foreground {
+  color: var(--foreground);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+/* Backgrounds */
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.bg-highlight {
+  background-color: var(--highlight);
+}
+
+/* Borders */
+.border-custom {
+  border-color: var(--border);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.section-soft-shadow {
+  box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.08);
+}
