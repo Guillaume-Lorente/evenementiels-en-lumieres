@@ -118,6 +118,87 @@ export default function ContactPage() {
                     </div>
                   </div>
 
+                  <div className="grid gap-5 sm:grid-cols-2">
+  {/* Type d'événement */}
+  <div className="grid gap-2">
+    <label
+      className="text-sm text-foreground/80"
+      htmlFor="eventType"
+    >
+      Type d’événement *
+    </label>
+    <select
+      id="eventType"
+      name="eventType"
+      required
+      className="h-12 rounded-2xl border border-custom bg-white px-4 outline-none focus:ring-2 focus:ring-(--accent)"
+      defaultValue=""
+    >
+      <option value="" disabled>
+        Sélectionnez un type d'événement
+      </option>
+      <option value="mariage">Mariage</option>
+      <option value="anniversaire">Anniversaire</option>
+      <option value="soiree">Soirée privée</option>
+      <option value="bapteme">Baptême</option>
+      <option value="evenement">Autre événement</option>
+    </select>
+  </div>
+
+  {/* Nombre d'invités */}
+  <div className="grid gap-2">
+    <label
+      className="text-sm text-foreground/80"
+      htmlFor="guests"
+    >
+      Nombre d’invités
+    </label>
+    <input
+      id="guests"
+      name="guests"
+      type="number"
+      min="1"
+      className="h-12 rounded-2xl border border-custom bg-white px-4 outline-none focus:ring-2 focus:ring-(--accent)"
+      placeholder="Ex : 80"
+    />
+  </div>
+</div>
+
+<div className="grid gap-5 sm:grid-cols-2">
+  {/* Date de l'événement */}
+  <div className="grid gap-2">
+    <label
+      className="text-sm text-foreground/80"
+      htmlFor="eventDate"
+    >
+      Date de l’événement
+    </label>
+    <input
+      id="eventDate"
+      name="eventDate"
+      type="date"
+      className="h-12 rounded-2xl border border-custom bg-white px-4 outline-none focus:ring-2 focus:ring-(--accent)"
+    />
+  </div>
+
+  {/* Lieu de l'événement */}
+  <div className="grid gap-2">
+    <label
+      className="text-sm text-foreground/80"
+      htmlFor="eventLocation"
+    >
+      Lieu de l’événement
+    </label>
+    <input
+      id="eventLocation"
+      name="eventLocation"
+      className="h-12 rounded-2xl border border-custom bg-white px-4 outline-none focus:ring-2 focus:ring-(--accent)"
+      placeholder="Ville, région ou lieu prévu"
+      autoComplete="address-level2"
+    />
+  </div>
+</div>
+
                   <div className="grid gap-2">
                     <label
                       className="text-sm text-foreground/80"

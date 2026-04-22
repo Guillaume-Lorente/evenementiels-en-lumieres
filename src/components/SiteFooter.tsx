@@ -1,25 +1,24 @@
-import Link from "next/link";
-
 export default function SiteFooter() {
   return (
-    <footer className="bg-(--primary) text-white">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-10 md:grid-cols-3">
-          {/* Marque */}
-          <div>
-            <h3 className="font-semibold">
-              Événementiels en Lumières
-            </h3>
-            <p className="mt-3 text-sm text-white/80">
-              Organisation d’événements élégants et sur mesure.
-              Mariages, corporate et soirées privées.
-            </p>
-          </div>
-        </div>
+    <footer className="bg-[var(--primary)] text-white">
+      <div className="mx-auto max-w-5xl px-6 py-12 text-center">
+        {/* Nom */}
+        <h3 className="text-lg font-medium tracking-wide">
+          Événementiels en Lumières
+        </h3>
 
-        <div className="mt-10 border-t border-white/20 pt-6 text-sm text-white/60">
-          © {new Date().getFullYear()} Événementiels en Lumières — Tous droits réservés
-        </div>
+        {/* Ligne fine */}
+        <div className="mx-auto mt-4 h-px w-12 bg-[var(--highlight)]/70" />
+
+        {/* Signature */}
+        <p className="mt-4 text-xs text-white/70">
+          L’art de sublimer vos événements
+        </p>
+
+        {/* Copyright */}
+        <p className="mt-6 text-xs text-white/50">
+          © {new Date().getFullYear()} — Tous droits réservés
+        </p>
       </div>
     </footer>
   );
