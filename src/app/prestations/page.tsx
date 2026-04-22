@@ -14,7 +14,7 @@ const categories = [
     description:
       "Un accompagnement complet pour faire de votre cérémonie de mariage une réussite fluide, sereine et magique.",
     href: "/prestations/wedding-planner",
-    image: "/prestations-hero.jpg",
+    image: "/prestations-hero2.jpg",
     label: "Mariage",
   },
   {
@@ -22,7 +22,7 @@ const categories = [
     description:
       "Organisation d’événements privés : anniversaires, soirées, baptêmes et moments sur mesure.",
     href: "/prestations/event-planner",
-    image: "/event-planner.jpg",
+    image: "/event-planner2.jpg",
     label: "Privé",
   },
 ];
@@ -32,7 +32,7 @@ export default function PrestationsPage() {
     <main>
       <section className="relative h-[75vh] w-full overflow-hidden">
         <Image
-          src="/prestations-hero.jpg"
+          src="/prestations-hero2.jpg"
           alt="Nos prestations"
           fill
           priority

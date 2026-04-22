@@ -24,7 +24,7 @@ export default function AboutPage() {
     <main>
       <section className="relative h-[75vh] w-full overflow-hidden">
         <Image
-          src="/a-propos.jpg"
+          src="/a-propos2.jpg"
           alt="À propos de Evénementiels en Lumières"
           fill
           priority

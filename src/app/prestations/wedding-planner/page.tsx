@@ -28,7 +28,7 @@ export default function WeddingPlannerPage() {
     <main>
       <section className="relative h-[80vh] w-full overflow-hidden">
         <Image
-          src="/prestations-hero.jpg"
+          src="/prestations-hero2.jpg"
           alt="Wedding planner"
           fill
           priority

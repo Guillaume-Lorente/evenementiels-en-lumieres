@@ -23,7 +23,7 @@ export default function EventPlannerPage() {
       {/* HERO */}
       <section className="relative h-[80vh] w-full overflow-hidden">
         <Image
-          src="/event-planner.jpg"
+          src="/event-planner2.jpg"
           alt="Event planner"
           fill
           priority

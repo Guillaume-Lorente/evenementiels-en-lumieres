@@ -9,7 +9,7 @@ export default function HomePage() {
       <section className="relative h-screen w-full overflow-hidden">
         {/* Image */}
         <Image
-          src="/hero.jpg"
+          src="/hero2.jpg"
           alt="Ambiance événementielle élégante"
           fill
           priority

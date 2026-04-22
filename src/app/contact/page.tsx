@@ -13,7 +13,7 @@ export default function ContactPage() {
         {/* Background image */}
         <div className="relative min-h-[calc(100vh-80px)] w-full">
           <Image
-            src="/contact-hero.jpg"
+            src="/contact-hero2.jpg"
             alt="Ambiance événementielle"
             fill
             priority
