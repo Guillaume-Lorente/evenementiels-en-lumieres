@@ -30,6 +30,7 @@ export async function sendContactForm(formData: FormData) {
   if (!verifyData.success) {
     return { success: false, message: "Validation reCAPTCHA échouée." };
   }
+  console.log("reCAPTCHA verifyData:", verifyData);
 
   const lastName = formData.get("lastName");
   const firstName = formData.get("firstName");

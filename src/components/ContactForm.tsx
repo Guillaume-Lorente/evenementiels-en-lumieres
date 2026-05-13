@@ -33,9 +33,8 @@ export default function ContactForm() {
         message: result.message,
       });
 
-      if (result.success) {
         recaptchaRef.current?.reset();
-      }
+
     });
   }
 
