@@ -6,6 +6,9 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendContactForm(formData: FormData) {
   const recaptchaToken = formData.get("recaptchaToken");
+  console.log("reCAPTCHA token exists:", Boolean(recaptchaToken));
+console.log("reCAPTCHA token length:", String(recaptchaToken).length);
+
 
   if (!recaptchaToken) {
     return { success: false, message: "Veuillez valider le reCAPTCHA." };
