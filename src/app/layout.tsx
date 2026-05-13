@@ -16,13 +16,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-  <head>
-    <script
-      src="https://www.google.com/recaptcha/api.js"
-      async
-      defer
-    />
-  </head>
   <body>
     <div className="min-h-dvh flex flex-col">
       <SiteHeader />
