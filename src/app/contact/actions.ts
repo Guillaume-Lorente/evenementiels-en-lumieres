@@ -1,14 +1,15 @@
 "use server";
 
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { transporter } from "@/lib/email";
 
 export async function sendContactForm(formData: FormData) {
   const recaptchaToken = formData.get("recaptchaToken");
 
   if (!recaptchaToken) {
-    return { success: false, message: "Veuillez valider le reCAPTCHA." };
+    return {
+      success: false,
+      message: "Veuillez valider le reCAPTCHA.",
+    };
   }
 
   const verifyRes = await fetch(
@@ -30,25 +31,43 @@ export async function sendContactForm(formData: FormData) {
   console.log("reCAPTCHA verifyData:", verifyData);
 
   if (!verifyData.success) {
-    return { success: false, message: "Validation reCAPTCHA échouée." };
+    return {
+      success: false,
+      message: "Validation reCAPTCHA échouée.",
+    };
   }
 
-  const lastName = formData.get("lastName");
-  const firstName = formData.get("firstName");
-  const email = formData.get("email");
-  const phone = formData.get("phone");
-  const eventType = formData.get("eventType");
-  const guests = formData.get("guests");
-  const eventDate = formData.get("eventDate");
-  const eventLocation = formData.get("eventLocation");
-  const message = formData.get("message");
+  const lastName = String(formData.get("lastName") || "").trim();
+  const firstName = String(formData.get("firstName") || "").trim();
+  const email = String(formData.get("email") || "").trim();
+  const phone = String(formData.get("phone") || "").trim();
+  const eventType = String(formData.get("eventType") || "").trim();
+  const guests = String(formData.get("guests") || "").trim();
+  const eventDate = String(formData.get("eventDate") || "").trim();
+  const eventLocation = String(formData.get("eventLocation") || "").trim();
+  const message = String(formData.get("message") || "").trim();
 
-  await resend.emails.send({
-  from: process.env.CONTACT_FROM_EMAIL ?? "",
-  to: process.env.CONTACT_TO_EMAIL?.split(",") ?? [],
-  subject: "Nouveau message depuis le site",
-  replyTo: String(email),
-  text: `
+  if (!lastName || !firstName || !email || !eventType || !message) {
+    return {
+      success: false,
+      message: "Merci de remplir tous les champs obligatoires.",
+    };
+  }
+
+  try {
+    await transporter.sendMail({
+      from:
+        process.env.CONTACT_FROM_EMAIL || process.env.SMTP_USER!,
+      to:
+        process.env.CONTACT_TO_EMAIL
+          ?.split(",")
+          .map((email) => email.trim()),
+
+      replyTo: email,
+
+      subject: `Nouveau message — ${firstName} ${lastName}`,
+
+      text: `
 Nom : ${lastName}
 Prénom : ${firstName}
 Email : ${email}
@@ -154,5 +173,16 @@ ${message}
   `,
 });
 
-  return { success: true, message: "Votre message a bien été envoyé." };
+return {
+      success: true,
+      message: "Votre message a bien été envoyé.",
+    };
+  } catch (error) {
+    console.error(error);
+
+    return {
+      success: false,
+      message: "Impossible d’envoyer le message.",
+    };
+  }
 }
