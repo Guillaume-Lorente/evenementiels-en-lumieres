@@ -45,7 +45,7 @@ export async function sendContactForm(formData: FormData) {
 
   await resend.emails.send({
   from: process.env.CONTACT_FROM_EMAIL ?? "",
-  to: process.env.CONTACT_TO_EMAIL ?? "",
+  to: process.env.CONTACT_TO_EMAIL?.split(",") ?? [],
   subject: "Nouveau message depuis le site",
   replyTo: String(email),
   text: `
