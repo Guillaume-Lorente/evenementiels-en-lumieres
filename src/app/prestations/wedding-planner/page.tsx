@@ -2,10 +2,20 @@ import Image from "next/image";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 
-export const metadata = {
-  title: "Wedding Planner – Evénementiels en Lumières",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Wedding Planner — Organisation de mariage",
   description:
-    "Accompagnement wedding planner : organisation, coordination, gestion du budget, prestataires et imprévus.",
+    "Accompagnement wedding planner complet : choix du lieu et des prestataires, gestion du budget, coordination, planning et gestion des imprévus pour un mariage réussi.",
+  alternates: { canonical: "/prestations/wedding-planner" },
+  openGraph: {
+    title: "Wedding Planner | Événementiels en Lumières",
+    description:
+      "Un accompagnement complet pour faire de votre cérémonie de mariage une réussite fluide, sereine et magique.",
+    url: "/prestations/wedding-planner",
+    images: [{ url: "/prestations-hero2.jpg", width: 1200, height: 630, alt: "Wedding Planner" }],
+  },
 };
 
 const services = [

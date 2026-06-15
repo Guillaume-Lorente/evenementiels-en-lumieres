@@ -2,10 +2,20 @@ import Image from "next/image";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 
-export const metadata = {
-  title: "Event Planner – Evénementiels en Lumières",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Event Planner — Organisation d’événements privés",
   description:
-    "Organisation d’événements privés : anniversaires, soirées, baptêmes, dîners et moments sur mesure.",
+    "Organisation d’événements privés : anniversaires, soirées, baptêmes, dîners et moments sur mesure, orchestrés avec élégance et dans les moindres détails.",
+  alternates: { canonical: "/prestations/event-planner" },
+  openGraph: {
+    title: "Event Planner | Événementiels en Lumières",
+    description:
+      "Anniversaires, soirées, baptêmes, dîners : nous organisons vos moments de vie pour en faire des instants uniques.",
+    url: "/prestations/event-planner",
+    images: [{ url: "/event-planner2.jpg", width: 1200, height: 630, alt: "Event Planner" }],
+  },
 };
 
 const services = [

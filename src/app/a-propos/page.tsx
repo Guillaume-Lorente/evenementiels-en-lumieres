@@ -2,10 +2,19 @@ import Image from "next/image";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 
-export const metadata = {
-  title: "À propos – Evénementiels en Lumières",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "À propos",
   description:
-    "Découvrez l’univers, les valeurs et la vision d’Evénementiels en Lumières.",
+    "Découvrez l’univers, les valeurs et la vision d’Événementiels en Lumières : une passion sincère pour l’art de recevoir et le sens du détail.",
+  alternates: { canonical: "/a-propos" },
+  openGraph: {
+    title: "À propos | Événementiels en Lumières",
+    description:
+      "Une passion sincère pour l’art de recevoir : l’histoire, les valeurs et la vision d’Événementiels en Lumières.",
+    url: "/a-propos",
+  },
 };
 
 const values = [

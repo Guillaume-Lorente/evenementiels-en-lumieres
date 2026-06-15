@@ -1,6 +1,7 @@
 "use server";
 
 import { transporter } from "@/lib/email";
+import { absoluteUrl } from "@/lib/site";
 
 export async function sendContactForm(formData: FormData) {
   const recaptchaToken = formData.get("recaptchaToken");
@@ -86,7 +87,7 @@ ${message}
       <div style="max-width:680px;margin:0 auto;padding:32px 20px;">
         <div style="background:#1a4d2e;border-radius:24px 24px 0 0;padding:32px 28px;text-align:center;">
   <img
-    src="https://evenementiels-en-lumieres.vercel.app/logo2.png"
+    src="${absoluteUrl("/logo2.png")}"
     alt="Événementiels en Lumières"
     width="120"
     style="display:block;margin:0 auto 18px auto;"

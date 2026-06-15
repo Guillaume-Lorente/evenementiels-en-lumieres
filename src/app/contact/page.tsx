@@ -2,9 +2,19 @@ import Image from "next/image";
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
 
-export const metadata = {
-  title: "Contact – Evénementiels en Lumières",
-  description: "Contactez Evénementiels en Lumières via notre formulaire.",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Parlons de votre projet : contactez Événementiels en Lumières via notre formulaire pour organiser votre mariage ou votre événement privé.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact | Événementiels en Lumières",
+    description:
+      "Une question, une idée, un projet d’événement ? Contactez Événementiels en Lumières.",
+    url: "/contact",
+  },
 };
 
 export default function ContactPage() {

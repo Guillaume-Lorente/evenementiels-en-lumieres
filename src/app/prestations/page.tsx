@@ -1,11 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 
-export const metadata = {
-  title: "Nos prestations – Evénementiels en Lumières",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Nos prestations — Wedding & Event Planner",
   description:
-    "Découvrez nos prestations événementielles : Wedding Planner et Event Planner, pour des événements sur mesure.",
+    "Découvrez nos prestations événementielles : Wedding Planner pour vos mariages et Event Planner pour vos événements privés, pour des moments sur mesure.",
+  alternates: { canonical: "/prestations" },
+  openGraph: {
+    title: "Nos prestations | Événementiels en Lumières",
+    description:
+      "Wedding Planner et Event Planner : un accompagnement sur mesure pour chaque moment de vie.",
+    url: "/prestations",
+  },
 };
 
 const categories = [
@@ -88,7 +98,7 @@ export default function PrestationsPage() {
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {categories.map((category) => (
-              <a
+              <Link
                 key={category.title}
                 href={category.href}
                 className="group overflow-hidden rounded-3xl border border-custom bg-surface shadow-sm transition-transform duration-300 hover:-translate-y-1"
@@ -121,7 +131,7 @@ export default function PrestationsPage() {
                     </span>
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </Container>
